@@ -1,0 +1,244 @@
+{
+  "knowledge_graph_schema": {
+    "description": "Comprehensive biomedical knowledge graph focused on Type 1 Diabetes research (excluding article nodes and related edges)",
+    "domain": "Biomedical Research - Type 1 Diabetes",
+    "node_types": {
+      "coding_elements;gene": {
+        "description": "Genes from Ensembl database with genomic coordinates and annotations",
+        "properties": {
+          "id": "String",
+          "id_version": "Int",
+          "description": "String",
+          "chr": "String",
+          "start_loc": "Int",
+          "end_loc": "Int",
+          "strand": "String",
+          "name": "String",
+          "GC_percentage": "Float",
+          "type": "String",
+          "link": "String",
+          "gencode_annotation": "String",
+          "data_version": "String",
+          "data_source": "String"
+        }
+      },
+      "OCR": {
+        "description": "Node type: OCR",
+        "properties": {
+          "data_version": "String",
+          "data_source": "String"
+        }
+      },
+      "ontology;gene_ontology": {
+        "description": "Genes from Ensembl database with genomic coordinates and annotations",
+        "properties": {
+          "id": "String",
+          "name": "String",
+          "description": "String",
+          "link": "String",
+          "data_version": "String"
+        }
+      },
+      "ontology;disease": {
+        "description": "Diseases from MONDO ontology, particularly Type 1 Diabetes",
+        "properties": {
+          "url": "String",
+          "id": "String",
+          "definition": "String",
+          "name": "String",
+          "synonyms": "String",
+          "data_version": "String",
+          "data_source": "String"
+        }
+      },
+      "ontology;cell_type": {
+        "description": "Cell types from Cell Ontology, particularly pancreatic cell types",
+        "properties": {
+          "url": "String",
+          "id": "String",
+          "definition": "String",
+          "name": "String",
+          "synonyms": "String",
+          "data_version": "String",
+          "data_source": "String"
+        }
+      },
+      "variants;sequence_variant;snp": {
+        "description": "Single nucleotide polymorphisms (SNPs) from NCBI database",
+        "properties": {
+          "id": "String",
+          "link": "String",
+          "data_version": "String",
+          "data_source": "String",
+          "source_table": "String",
+          "chr": "String",
+          "start_loc": "Int",
+          "end_loc": "Int",
+          "ref": "String",
+          "alt": "String",
+          "id_version": "Int",
+          "variant_allele_origin": "String",
+          "variant_suspect_reason": "String",
+          "freq": "String",
+          "HGVS_name": "String",
+          "non_synonymous_frameshift": "String",
+          "non_synonymous_missense": "String",
+          "non_synonymous_nonsense": "String",
+          "in_3prime_UTR": "String",
+          "in_5prime_UTR": "String",
+          "in_acceptor_splice_site": "String",
+          "in_donor_splice_site": "String",
+          "in_intron": "String",
+          "in_3prime_gene_region": "String",
+          "in_5prime_gene_region": "String",
+          "common_SNP": "String",
+          "type": "String",
+          "source_file": "String"
+        }
+      }
+    },
+    "edge_types": {
+      "interaction;general_binding": {
+        "description": "Relationship type: interaction;general_binding",
+        "source_node_type": "gene",
+        "target_node_type": "gene",
+        "properties": {
+          "biogrid_interaction_id": "Int",
+          "Entrez_ID_A": "Int",
+          "Entrez_ID_B": "Int",
+          "biogrid_id_interactor_a": "Int",
+          "biogrid_id_interactor_b": "Int",
+          "official_symbol_interactor_a": "String",
+          "official_symbol_interactor_b": "String",
+          "experimental_system": "String",
+          "experimental_system_type": "String",
+          "author": "String",
+          "publication_source": "String",
+          "organism_id_interactor_a": "Int",
+          "organism_id_interactor_b": "Int",
+          "throughput": "String",
+          "score": "Float",
+          "modification": "String",
+          "qualifications": "String",
+          "data_source": "String"
+        }
+      },
+      "OCR_locate_in": {
+        "description": "Relationship type: OCR_locate_in",
+        "source_node_type": "open_chromatin_region",
+        "target_node_type": "gene",
+        "properties": {
+          "data_version": "String",
+          "data_source": "String"
+        }
+      },
+      "OCR_activity": {
+        "description": "Open chromatin region activity scores in different cell types and disease states",
+        "source_node_type": "open_chromatin_region",
+        "target_node_type": "cell_type",
+        "properties": {
+          "OCR_GeneActivityScore_mean": "Float",
+          "OCR_GeneActivityScore_median": "Float",
+          "non_diabetic__OCR_GeneActivityScore_mean": "Float",
+          "non_diabetic__OCR_GeneActivityScore_median": "Float",
+          "AAB_pos__OCR_GeneActivityScore_mean": "Float",
+          "AAB_pos__OCR_GeneActivityScore_median": "Float",
+          "type_1_diabetes__OCR_GeneActivityScore_mean": "Float",
+          "type_1_diabetes__OCR_GeneActivityScore_median": "Float",
+          "type_2_diabetes__OCR_GeneActivityScore_mean": "Float",
+          "type_2_diabetes__OCR_GeneActivityScore_median": "Float",
+          "data_version": "String",
+          "data_source": "String"
+        }
+      },
+      "function_annotation": {
+        "description": "Gene Ontology annotations linking genes to their molecular functions, biological processes, and cellular components",
+        "source_node_type": "gene",
+        "target_node_type": "gene_ontology",
+        "properties": {
+          "data_version": "String",
+          "data_source": "String"
+        }
+      },
+      "effector_gene_of": {
+        "description": "Genes that are causal or almost certainly causal for Type 1 Diabetes based on genetic evidence",
+        "source_node_type": "gene",
+        "target_node_type": "disease",
+        "properties": {
+          "evidence": "String",
+          "effector_gene_list_url": "String",
+          "data_version": "String",
+          "data_source_url": "String",
+          "data_source": "String"
+        }
+      },
+      "expression_level_in": {
+        "description": "Relationship type: expression_level_in",
+        "source_node_type": "gene",
+        "target_node_type": "cell_type",
+        "properties": {
+          "NonDiabetic__expression_mean": "Float",
+          "NonDiabetic__expression_min": "Float",
+          "NonDiabetic__expression_25_quantile": "Float",
+          "NonDiabetic__expression_median": "Float",
+          "NonDiabetic__expression_75_quantile": "Float",
+          "NonDiabetic__expression_max": "Float",
+          "Type1Diabetic__expression_mean": "Float",
+          "Type1Diabetic__expression_min": "Float",
+          "Type1Diabetic__expression_25_quantile": "Float",
+          "Type1Diabetic__expression_median": "Float",
+          "Type1Diabetic__expression_75_quantile": "Float",
+          "Type1Diabetic__expression_max": "Float",
+          "All__expression_mean": "Float",
+          "All__expression_min": "Float",
+          "All__expression_25_quantile": "Float",
+          "All__expression_median": "Float",
+          "All__expression_75_quantile": "Float",
+          "All__expression_max": "Float",
+          "data_version": "String",
+          "data_source": "String"
+        }
+      },
+      "DEG_in": {
+        "description": "Relationship type: DEG_in",
+        "source_node_type": "gene",
+        "target_node_type": "cell_type",
+        "properties": {
+          "UpOrDownRegulation": "String",
+          "Log2FoldChange": "Float",
+          "SE_of_Log2FoldChange": "Float",
+          "P_value": "Float",
+          "Adjusted_P_value": "Float",
+          "data_version": "String",
+          "data_source": "String"
+        }
+      },
+      "QTL_for": {
+        "description": "Quantitative trait loci associations between genetic variants and gene expression",
+        "source_node_type": "snp",
+        "target_node_type": "gene",
+        "properties": {
+          "tissue_name": "String",
+          "tissue_id": "String",
+          "credible_set": "String",
+          "gene_name": "String",
+          "credibleset": "String",
+          "pip": "Float",
+          "nominal_p": "Float",
+          "lbf": "Float",
+          "effect_allele": "String",
+          "other_allele": "String",
+          "slope": "Float",
+          "n_snp": "Int",
+          "purity": "Float",
+          "data_version": "String",
+          "data_source": "String"
+        }
+      }
+    },
+    "total_files": 17,
+    "total_node_files": 6,
+    "total_edge_files": 11,
+    "note": "Article nodes and edges directly linked to articles have been excluded from this schema"
+  }
+}
