@@ -1,66 +1,89 @@
-PanKgraph Human-Language Search — Feedback Guidelines
+# 🧠 PanKgraph Human-Language Search — Feedback Guidelines
 
-Please file all feedback as GitHub issues in this repository.
+Please submit **all feedback as GitHub issues** in this repository.
 
-1) What kind of feedback?
-	•	Content problems (wrong/missing/misleading answers)
-	•	Bugs (UI errors, crashes, timeouts, prompts not running, etc.)
-	•	UX suggestions (clarity, speed, wording, layout)
+---
 
-2) For content problems
+## 🔍 1. What Kind of Feedback?
 
-Include:
-	•	Your input question (exact text you typed)
-	•	Agent’s answer (copy/paste)
-	•	Why it’s wrong (what’s inaccurate, missing, or misleading)
-	•	What you expected (one sentence is fine)
-	•	Where you were (URL if applicable)
-	•	Optional: screenshot(s)
+You can report:
+- **Content issues** – wrong, incomplete, or misleading answers  
+- **Bugs** – interface errors, crashes, timeouts, or prompt failures  
+- **UX suggestions** – clarity, speed, or usability improvements  
 
-3) For bugs
+---
 
-Include:
-	•	Steps to reproduce (numbered, from a fresh page if possible)
-	•	Expected vs. actual result
-	•	Environment (browser + version, OS, desktop/mobile)
-	•	Timestamp & timezone (e.g., 2025-11-06 10:42 ET)
-	•	URL of the page where it happened
-	•	Any visible error text (and browser console snippet if easy)
+## 🧩 2. For Content Issues
 
-4) Labels & severity (optional but helpful)
-	•	type:content, type:bug, or type:ux
-	•	severity:blocker (can’t test), severity:major (core feature broken), severity:minor (workaround exists)
+Please include:
+- **Your input question** (exact text you typed)  
+- **Agent’s answer** (copy and paste the output)  
+- **Why it’s wrong or incomplete**  
+- **What you expected instead**  
+- **Where you were** (URL if applicable)  
+- *(Optional)* screenshots  
 
-5) Privacy
+---
 
-Do not paste protected data. Redact anything sensitive; link to public sources where possible.
+## 🐞 3. For Bugs
 
-⸻
+Please describe:
+- **Steps to reproduce** (numbered and clear)  
+- **Expected vs. actual behavior**  
+- **Environment** – browser, OS, device (desktop/mobile)  
+- **Timestamp & timezone** – e.g., `2025-11-06 10:42 ET`  
+- **URL** where the bug occurred  
+- **Error messages or console logs** (if available)  
 
-Issue Template (copy/paste)
+---
 
-Title: [type] Brief description
+## 🏷️ 4. Labels & Severity (Optional but Helpful)
 
-Type: content / bug / ux
-Severity: blocker / major / minor
+Use the following labels when creating issues:
 
-URL: <link>
-Time (TZ): YYYY-MM-DD HH:MM (Your TZ)
-Environment: Chrome 129 / macOS 14.6 (desktop)
+| Label | Description |
+|-------|--------------|
+| `type:content` | Incorrect or incomplete answer |
+| `type:bug` | Functionality or technical issue |
+| `type:ux` | User experience or interface feedback |
+| `severity:blocker` | Feature unusable |
+| `severity:major` | Key functionality broken |
+| `severity:minor` | Small issue or workaround available |
 
-What I did
-	1.	…
-	2.	…
-	3.	…
+---
 
-Expected
+## 🔒 5. Privacy Reminder
 
+Please **do not include any private or sensitive data**.  
+Redact personal information and link to public sources when possible.
+
+---
+
+## 🧾 Issue Template (Copy & Paste)
+
+```markdown
+**Title:** [type] Brief description
+
+**Type:** content / bug / ux  
+**Severity:** blocker / major / minor  
+
+**URL:** <link>  
+**Time (TZ):** YYYY-MM-DD HH:MM (Your TZ)  
+**Environment:** Chrome 129 / macOS 14.6 (desktop)
+
+### What I did
+1. …
+2. …
+3. …
+
+### Expected
 …
 
-Actual
-
+### Actual
 …
 
-For content issues
-	•	Question I asked: …
-	•	Agent’s answer (verbatim):
+### For content issues
+**Question I asked:**  
+`...`
+
+**Agent’s answer (verbatim):**
